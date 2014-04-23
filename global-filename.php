@@ -10,7 +10,7 @@ Author URI: http://wpceo.com/
 
 add_filter('sanitize_file_name','wpceo_chinese_char');
 function wpceo_chinese_char($string){
-	return preg_replace_callback('/[\x{0080}-\x{ffff}]/iu','wpceo_get_hex_by_callback',$string);
+	return preg_replace_callback('/[\x{0080}-\x{ffff}]/u','wpceo_get_hex_by_callback',$string);
 }
 function wpceo_get_hex_by_callback($string){
 	$string = (string)$string[0];
